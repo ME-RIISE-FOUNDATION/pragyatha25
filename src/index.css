@@ -1,0 +1,10 @@
+@font-face{
+  font-family: 'Got';
+  src: url('src/fonts/Game of Thrones.ttf');
+}
+@import "tailwindcss";
+
+
+@theme{
+  --font-got: 'Got', "sans-serif";
+}/* Game of Thrones Font */
