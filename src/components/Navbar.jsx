@@ -121,15 +121,16 @@
 
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "Events", href: "#events" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Events", href: "/events" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -137,7 +138,7 @@ const Navbar = () => {
       <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg rounded-full px-5 md:px-8 py-3 flex items-center justify-between text-white transition-all duration-300">
 
         {/* LEFT — LOGO */}
-        <div className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center overflow-hidden">
             <img
               src="/pragyatha_logo.png"
@@ -146,21 +147,21 @@ const Navbar = () => {
             />
           </div>
           <h1 className="font-semibold text-lg tracking-widest">
-            PRAGYATHA ’25
+            PRAGYATHA '25
           </h1>
-        </div>
+        </Link>
 
         {/* CENTER — LINKS */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-10">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="relative text-sm tracking-widest font-medium uppercase hover:text-cyan-400 transition duration-300 group"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -213,14 +214,14 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center py-5 space-y-5">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setOpen(false)}
               className="text-base font-medium uppercase tracking-widest text-white hover:text-cyan-400 transition duration-300"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <div className="w-4/5 border-t border-white/20"></div>
           <a
