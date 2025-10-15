@@ -3,6 +3,7 @@
 import React from 'react';
 import Snowfall from 'react-snowfall';
 import ImageGallery from './components/ImageGallery';
+import BlueEmbers from './components/BlueEmbers';
 
 const Home = () => {
   const backgroundImageUrl = '/home_bg.jpg';

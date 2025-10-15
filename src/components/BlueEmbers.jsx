@@ -34,7 +34,7 @@ const BlueEmbers = () => {
         opacity: 0.8;
       }
       100% {
-        transform: translate(var(--horizontal-drift), -105vh);
+        transform: translate(var(--horizontal-drift), -100vh);
         opacity: 0;
       }
     }
@@ -43,7 +43,7 @@ const BlueEmbers = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
-      <div className="particles-container absolute inset-0 pointer-events-none z-0">
+      <div className="particles-container fixed inset-0 overflow-hidden pointer-events-none z-0">
         {particles}
       </div>
     </>
@@ -51,4 +51,3 @@ const BlueEmbers = () => {
 };
 
 export default BlueEmbers;
-
