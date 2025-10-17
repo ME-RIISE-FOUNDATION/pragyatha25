@@ -81,7 +81,7 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
                   <div className="text-gray-300 uppercase tracking-wider">Participants</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">5+</div>
                   <div className="text-gray-300 uppercase tracking-wider">Events</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
@@ -89,7 +89,7 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
                   <div className="text-gray-300 uppercase tracking-wider">Days</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">25+</div>
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">10+</div>
                   <div className="text-gray-300 uppercase tracking-wider">Colleges</div>
                 </div>
               </div>
@@ -119,41 +119,6 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
               </div>
             </div>
 
-            {/* Event Categories */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-semibold tracking-wider uppercase text-center mb-12">
-                Event Categories
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center">
-                    <span className="text-2xl">💻</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 uppercase tracking-wider">Technical</h3>
-                  <p className="text-gray-300 text-sm">
-                    Coding competitions, hackathons, and technical challenges
-                  </p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 uppercase tracking-wider">Creative</h3>
-                  <p className="text-gray-300 text-sm">
-                    Design contests, photography, and artistic competitions
-                  </p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center">
-                    <span className="text-2xl">🤖</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 uppercase tracking-wider">Robotics</h3>
-                  <p className="text-gray-300 text-sm">
-                    Robotics competitions and automation challenges
-                  </p>
-                </div>
-              </div>
-            </div>
 
             {/* Call to Action */}
             <div className="text-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">

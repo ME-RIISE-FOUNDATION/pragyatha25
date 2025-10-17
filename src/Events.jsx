@@ -708,7 +708,7 @@ const Events = () => {
     }
   `;
 
-  return (
+  return (<>
     <div id="events" className="relative min-h-screen bg-gradient-to-br from-gray-950 via-black to-blue-950 text-gray-100 py-40 font-sans overflow-x-hidden">
       <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
       <div className="particles-container absolute inset-0 pointer-events-none z-0">
@@ -811,29 +811,10 @@ const Events = () => {
           )}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gray-900/60 backdrop-blur-sm border border-blue-900/50 rounded-lg p-8 max-w-2xl mx-auto shadow-lg shadow-black/30">
-            <h2 className="text-2xl font-semibold tracking-wider uppercase mb-4 text-white">
-              Ready to Participate?
-            </h2>
-            <p className="text-gray-300 mb-6">
-              Register for multiple events and showcase.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-blue-800/40 border border-blue-700 text-blue-200 font-semibold tracking-wide rounded-lg hover:bg-blue-700 hover:text-white transition-all duration-300 uppercase">
-                View All Events
-              </button>
-              <button className="px-8 py-3 bg-gray-800/40 border border-gray-700 text-gray-300 font-semibold tracking-wide rounded-lg hover:bg-gray-700/60 hover:text-white transition-all duration-300 uppercase">
-                Download Schedule
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+     </div>
     </div>
+</>
   );
 };
 
 export default Events;
-

@@ -129,7 +129,7 @@ const Navbar = () => {
   const links = [
     { name: "Home", href: "/" },
     { name: "Events", href: "/events" },
-    { name: "Gallery", href: "/gallery" },
+    // { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
 

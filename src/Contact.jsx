@@ -1,4 +1,5 @@
 import React from "react";
+import { FaInstagram, FaYoutube, FaLinkedin, FaGlobe } from "react-icons/fa";
 
 const Contact = () => {
   // We are now generating the wind streaks directly in the component.
@@ -73,36 +74,47 @@ const Contact = () => {
             </p>
             {/* Social Media */}
             <div className="mt-8">
-              <h2 className="text-lg font-semibold tracking-wider mb-4 uppercase text-slate-400">
-                Follow Us
-              </h2>
-              <div className="flex justify-center md:justify-start space-x-4">
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-slate-900/40 hover:border-slate-700 transition-all duration-300"
-                >
-                  <span className="text-xl">📘</span>
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-slate-900/40 hover:border-slate-700 transition-all duration-300"
-                >
-                  <span className="text-xl">📷</span>
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-slate-900/40 hover:border-slate-700 transition-all duration-300"
-                >
-                  <span className="text-xl">🐦</span>
-                </a>
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-slate-900/40 hover:border-slate-700 transition-all duration-300"
-                >
-                  <span className="text-xl">💼</span>
-                </a>
-              </div>
-            </div>
+  <h2 className="text-lg font-semibold tracking-wider mb-4 uppercase text-slate-400">
+    Follow Us
+  </h2>
+  <div className="flex justify-center md:justify-start space-x-4">
+    <a
+      href="https://www.instagram.com/me_riise?igsh=MXZxcm1tem1oYjBxaA=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-pink-500/30 hover:border-pink-500 transition-all duration-300"
+    >
+      <FaInstagram className="text-pink-400 text-2xl" />
+    </a>
+
+    <a
+      href="https://youtube.com/@me-riise1750?si=b-mFz6kHMJV6wyVn"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-red-500/30 hover:border-red-500 transition-all duration-300"
+    >
+      <FaYoutube className="text-red-500 text-2xl" />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/company/meriisefoundation/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-blue-600/30 hover:border-blue-600 transition-all duration-300"
+    >
+      <FaLinkedin className="text-blue-500 text-2xl" />
+    </a>
+    <a
+      href="https://www.meriise.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-blue-600/30 hover:border-blue-600 transition-all duration-300"
+    >
+      <FaGlobe className="text-white-500 text-2xl" />
+    </a>
+
+  </div>
+</div>
           </div>
 
           {/* Right Column: Contact Details */}
@@ -117,8 +129,11 @@ const Contact = () => {
                   <span className="text-slate-400 text-2xl">📱</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-xl mb-1 text-white">Organizer 1</h3>
-                  <p className="text-gray-300">+91 98765 43210</p>
+                  <h3 className="font-semibold text-xl mb-1 text-white">Aviksha Kavya Gowda</h3>
+                  <a href="tel:+917353097151" className="text-gray-300 hover:text-blue-400 transition">
+  +91 7353097151
+</a>
+
                 </div>
               </div>
 
@@ -128,8 +143,11 @@ const Contact = () => {
                   <span className="text-slate-400 text-2xl">📱</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-xl mb-1 text-white">Organizer 2</h3>
-                  <p className="text-gray-300">+91 87654 32109</p>
+                  <h3 className="font-semibold text-xl mb-1 text-white">Bilvateja H Y</h3>
+                  <a href="tel:+917353097151" className="text-gray-300 hover:text-blue-400 transition">
+  +91 8123820375
+</a>
+
                 </div>
               </div>
 
@@ -141,9 +159,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-xl mb-1 text-white">Venue</h3>
                   <p className="text-gray-300">
-                    Your University Name <br />
-                    Department of Computer Science <br />
-                    City, State - 123456
+                  Malnad College of Engineering <br />
+                    ME-RIISE FOUNDATION <br />
+                    Hassan , Karnatake  - 573201
                   </p>
                 </div>
               </div>

@@ -3,14 +3,12 @@ import React, { useState, useEffect } from 'react';
 const ImageGallery = () => {
   // Array of images for the gallery
   const galleryImages = [
-    { id: 1, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+1', alt: 'Event Image 1' },
-    { id: 2, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+2', alt: 'Event Image 2' },
-    { id: 3, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+3', alt: 'Event Image 3' },
-    { id: 4, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+4', alt: 'Event Image 4' },
+    { id: 1, src: '/advogue.jpeg', alt: 'Advouge' },
+    { id: 2, src: '/entrophosis.jpeg', alt: 'Entrorphosis' },
+    { id: 3, src: '/uiux.jpeg', alt: 'UI/UX Hackaton' },
+    { id: 4, src: '/design.jpeg', alt: 'Designing 101' },
     { id: 5, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+5', alt: 'Event Image 5' },
     { id: 6, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+6', alt: 'Event Image 6' },
-    { id: 7, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+7', alt: 'Event Image 7' },
-    { id: 8, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+8', alt: 'Event Image 8' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,7 +17,7 @@ const ImageGallery = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % galleryImages.length);
-    }, 4000); // Change image every 4 seconds
+    }, 3000); // Change image every 4 seconds
     return () => clearInterval(timer); // Cleanup interval on component unmount
   }, [galleryImages.length]);
 
@@ -65,9 +63,7 @@ const ImageGallery = () => {
           <h1 className="font-bold text-4xl md:text-5xl tracking-wider mb-4 uppercase">
             Glimpses of Pragyatha
           </h1>
-          <p className="text-gray-400 text-lg">
-            A look into our most memorable moments.
-          </p>
+
         </div>
       </div>
       
