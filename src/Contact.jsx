@@ -108,7 +108,7 @@ const Contact = () => {
       href="https://www.meriise.org/"
       target="_blank"
       rel="noopener noreferrer"
-      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-blue-600/30 hover:border-blue-600 transition-all duration-300"
+      className="w-12 h-12 rounded-full bg-gray-800/40 border border-gray-700 flex items-center justify-center hover:bg-white-600/30 hover:border-white-600 transition-all duration-300"
     >
       <FaGlobe className="text-white-500 text-2xl" />
     </a>
