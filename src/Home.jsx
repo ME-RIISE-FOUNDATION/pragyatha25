@@ -47,7 +47,8 @@ const Home = () => {
           
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="font-got text-4xl md:text-6xl lg:text-7xl tracking-widest mb-4">
+            <h1 className="font-got text-4xl md:text-6xl lg:text-7xl tracking-widest mb-4"
+            style={{ textShadow: '0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 191, 255, 0.5)' }}>
               ABOUT US
             </h1>
             <p className="text-gray-300 text-lg md:text-xl tracking-wider uppercase">
@@ -58,7 +59,7 @@ const Home = () => {
           <div className="max-w-6xl mx-auto">
             
             {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 font-mon">
               
               {/* About Text */}
               <div className="space-y-6">
@@ -75,7 +76,7 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6 ">
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
                   <div className="text-3xl font-bold text-cyan-400 mb-2">500+</div>
                   <div className="text-gray-300 uppercase tracking-wider">Participants</div>
@@ -96,22 +97,20 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
             </div>
 
             {/* Vision & Mission */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 font-mon">
                 <h3 className="text-2xl font-semibold tracking-wider uppercase mb-4 text-cyan-400">
                   Our Vision
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To be the premier platform that bridges the gap between academic learning
-                  and real-world application, fostering innovation and excellence in technology
-                  and engineering.
+                <p className="text-gray-300 leading-relaxed font-mon">
+                To engender industry ready graduates possessing magnificent skills in the arena of innovation and technological development of products/ services.
                 </p>
               </div>
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 font-mon">
                 <h3 className="text-2xl font-semibold tracking-wider uppercase mb-4 text-cyan-400">
                   Our Mission
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed font-mon">
                   To provide students with opportunities to showcase their skills, learn from
                   industry experts, and collaborate on projects that can make a real difference
                   in the world.
@@ -121,7 +120,7 @@ The Flagship event, organized by the ME-RIISE Foundation and Malnad College of E
 
 
             {/* Call to Action */}
-            <div className="text-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+            <div className="text-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 font-mon">
               <h2 className="text-2xl font-semibold tracking-wider uppercase mb-4">
                 Ready to Join Us?
               </h2>

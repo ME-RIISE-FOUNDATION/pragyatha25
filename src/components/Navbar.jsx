@@ -134,7 +134,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[85%] z-50">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[85%] z-50 font-mon">
       <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg rounded-full px-5 md:px-8 py-3 flex items-center justify-between text-white transition-all duration-300">
 
         {/* LEFT — LOGO */}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10 text-white py-8">
+    <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10 text-white py-8 font-mon">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -35,9 +35,9 @@ const Footer = () => {
               <a href="/events" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Events
               </a>
-              <a href="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              {/* <a href="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Gallery
-              </a>
+              </a> */}
               <a href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Contact
               </a>
@@ -48,9 +48,9 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start space-y-4">
             <h4 className="font-semibold text-lg tracking-wider uppercase">Contact Info</h4>
             <div className="flex flex-col space-y-2 text-sm text-gray-300">
-              <p>📧 pragyatha2025@example.com</p>
+              <p>📧 ceomeriise@mcehassan.ac.in</p>
               <p>📱 +91 98765 43210</p>
-              <p>📍 Your University Address</p>
+              <p>📍24F3+69J, Rangoli Halla, Malnad College of Engineering , Hassan, Karnataka 573201</p>
             </div>
           </div>
         </div>

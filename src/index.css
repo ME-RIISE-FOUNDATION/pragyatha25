@@ -2,9 +2,15 @@
   font-family: 'Got';
   src: url('src/fonts/Game of Thrones.ttf');
 }
+@font-face{
+  font-family: 'Mon';
+  src: url('src/fonts/Montserrat-VariableFont_wght.ttf');
+}
 @import "tailwindcss";
 
 
-@theme{
-  --font-got: 'Got', "sans-serif";
-}/* Game of Thrones Font */
+@theme {
+  --font-got: 'Got', sans-serif;
+  --font-mon: 'Mon', sans-serif;
+}
+/* Game of Thrones Font */

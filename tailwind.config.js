@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         got: ["GameOfThrones", "serif"], // 👈 custom font name
+        mon:["Monster","serif"]
       },
     },
   },
