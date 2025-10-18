@@ -162,8 +162,7 @@ const Events = () => {
   `;
 
   return (<>
-    <div id="events" className="relative min-h-screen bg-gradient-to-br from-gray-950 via-black to-blue-950 text-gray-100 py-32
- font-sans overflow-x-hidden ">
+    <div id="events" className="relative min-h-screen bg-gradient-to-br from-gray-950 via-black to-blue-950 text-gray-100 py-32 font-sans overflow-x-hidden ">
       <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
       <div className="particles-container absolute inset-0 pointer-events-none z-0">
         {particles}
