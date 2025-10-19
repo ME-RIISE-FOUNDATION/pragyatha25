@@ -14,3 +14,77 @@
   --font-mon: 'Mon', sans-serif;
 }
 /* Game of Thrones Font */
+@keyframes fire {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-fire {
+  background-size: 200% 200%;
+  animation: fire 1.5s infinite linear;
+  filter: drop-shadow(0 0 8px rgba(255, 100, 0, 0.6))
+          drop-shadow(0 0 15px rgba(255, 150, 50, 0.3));
+}
+
+/* Embers effect — floating orange specks */
+/* === 🔥 FIRE GRADIENT ANIMATION === */
+
+/* Speed control → change '2.5s' for faster/slower fire */
+@keyframes fire {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-fire {
+  background-size: 200% 200%;
+  animation: fire 2.5s infinite linear;  /* 🔥 SPEED */
+  /* Intensity control → adjust glow strength below */
+  filter:
+    drop-shadow(0 0 10px rgba(255, 120, 0, 0.8))   /* inner glow */
+    drop-shadow(0 0 20px rgba(255, 180, 50, 0.5))  /* mid glow */
+    drop-shadow(0 0 35px rgba(255, 255, 150, 0.2)); /* outer glow */
+}
+
+
+/* === 🔸 EMBERS FLOATING EFFECT === */
+
+/* Ember speed → change '1.8s' for slower/faster floating */
+@keyframes embers {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-8px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.6);
+  }
+}
+
+.animate-embers::before,
+.animate-embers::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;          /* Ember size */
+  height: 4px;
+  background: radial-gradient(circle, orange 0%, transparent 70%);
+  border-radius: 50%;
+  animation: embers 1s infinite ease-in-out;  /* 🔥 SPEED */
+  transform: translateX(-50%);
+  filter: blur(0.3px);
+}
+
+/* Adjust ember timing/frequency below */
+.animate-embers::after {
+  animation-delay: 0.75s;  /* Delay between embers */
+  left: 55%;              /* Spread distance */
+}

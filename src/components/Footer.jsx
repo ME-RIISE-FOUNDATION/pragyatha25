@@ -43,16 +43,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start space-y-4">
-            <h4 className="font-semibold text-lg tracking-wider uppercase">Contact Info</h4>
-            <div className="flex flex-col space-y-2 text-sm text-gray-300">
-              <p>📧 ceomeriise@mcehassan.ac.in</p>
-              <p>📱 +91 98765 43210</p>
-              <p>📍24F3+69J, Rangoli Halla, Malnad College of Engineering , Hassan, Karnataka 573201</p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}
