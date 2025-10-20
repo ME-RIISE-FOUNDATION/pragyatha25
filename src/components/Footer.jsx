@@ -32,13 +32,13 @@ const Footer = () => {
               <a href="/" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Home
               </a>
-              <a href="/events" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <a href="src/Events.jsx" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Events
               </a>
               {/* <a href="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Gallery
               </a> */}
-              <a href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <a href="src/Contact.jsx" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Contact
               </a>
             </div>

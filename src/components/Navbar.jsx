@@ -20,13 +20,14 @@ const Navbar = () => {
 
         {/* LEFT — LOGO */}
         <Link to="/" className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center overflow-hidden">
-            <img
-              src="/pragyatha_logo.png"
-              alt="logo"
-              className="object-contain w-full h-full"
-            />
-          </div>
+        <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+  <img
+    src="/pragyatha_logo.png"
+    alt="logo"
+    className="object-contain w-full h-full invert brightness-0"
+  />
+</div>
+
           <h1
   className="relative font-semibold text-lg tracking-widest text-transparent bg-clip-text bg-gradient-to-t from-orange-600 via-yellow-400 to-white animate-fire"
 >
