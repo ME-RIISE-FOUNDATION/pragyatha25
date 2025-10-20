@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        got: ["GameOfThrones", "serif"], // 👈 custom font name
-        mon:["Monster","serif"]
-      },
+        got: ['Got', 'serif'],
+        mon: ['Mon', 'serif'],
+      }
+      ,
     },
   },
   plugins: [],
