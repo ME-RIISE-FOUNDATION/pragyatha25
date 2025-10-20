@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -29,18 +30,18 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start space-y-4">
             <h4 className="font-semibold text-lg tracking-wider uppercase">Quick Links</h4>
             <div className="flex flex-col space-y-2">
-              <a href="/" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <Link to="/" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Home
-              </a>
-              <a href="src/Events.jsx" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              </Link>
+              <Link to="/events" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Events
-              </a>
-              {/* <a href="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              </Link>
+              <Link to="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Gallery
-              </a> */}
-              <a href="src/Contact.jsx" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              </Link>
+              <Link to="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -51,12 +52,18 @@ const Footer = () => {
             © 2025 Pragyatha. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+            <button 
+              onClick={() => alert('Privacy Policy page coming soon!')}
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+            </button>
+            <button 
+              onClick={() => alert('Terms of Service page coming soon!')}
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+            >
               Terms of Service
-            </a>
+            </button>
           </div>
         </div>
       </div>

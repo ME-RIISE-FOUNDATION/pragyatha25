@@ -1,6 +1,8 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: 'Got';
-  src: url('/fonts/GameOfThrones.ttf') format('truetype');
+  src: url('/fonts/Game of Thrones.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,7 +15,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 
 @theme {
   --font-got: 'Got', sans-serif;
