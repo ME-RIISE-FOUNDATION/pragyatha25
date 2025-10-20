@@ -7,10 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        got: ['Got', 'serif'],
-        mon: ['Mon', 'serif'],
-      }
-      ,
+        got: ['Got', 'sans-serif'],
+        mon: ['Mon', 'sans-serif'],
+      },
     },
   },
   plugins: [],

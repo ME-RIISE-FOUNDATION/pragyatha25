@@ -6,6 +6,7 @@ import Home from './Home'
 import Events from './Events'
 import Gallery from './Gallery'
 import Contact from './Contact'
+import FontTest from './components/FontTest'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <FontTest />
     </>
   )
 }

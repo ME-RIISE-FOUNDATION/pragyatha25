@@ -2,10 +2,12 @@
 
 @font-face {
   font-family: 'Got';
-  src: url('/fonts/Game of Thrones.ttf') format('truetype');
+  src: url('/fonts/GameOfThrones.ttf') format('truetype'),
+       url('/fonts/Game of Thrones.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  font-variant: normal;
 }
 
 @font-face {
@@ -14,11 +16,21 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  font-variant: normal;
 }
 
 @theme {
   --font-got: 'Got', sans-serif;
   --font-mon: 'Mon', sans-serif;
+}
+
+/* Ensure font loading and fallback */
+.font-got {
+  font-family: 'Got', 'Arial Black', 'Arial', sans-serif !important;
+}
+
+.font-mon {
+  font-family: 'Mon', 'Montserrat', 'Arial', sans-serif !important;
 }
 
   /* Game of Thrones Font */
