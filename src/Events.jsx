@@ -92,13 +92,11 @@ const Events = () => {
     },
   ];
 
-  // Filter logic
   const filteredEvents =
     selectedCategory === 'all'
       ? events
       : events.filter((event) => event.category === selectedCategory);
 
-  // Carousel navigation
   const goToNext = () => {
     setClickedButton('next');
     setTimeout(() => setClickedButton(null), 400);
@@ -113,7 +111,6 @@ const Events = () => {
     );
   };
 
-  // Particle effect
   const particleCount = 120;
   const particles = Array.from({ length: particleCount }).map((_, i) => {
     const horizontalDrift = Math.random() * 60 - 30;
@@ -187,7 +184,6 @@ const Events = () => {
             </p>
           </div>
 
-          {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12 font-mon">
             {categories.map((category) => (
               <button
@@ -207,11 +203,9 @@ const Events = () => {
             ))}
           </div>
 
-          {/* Event Carousel */}
           <div className="flex-grow flex items-center justify-center relative">
             {filteredEvents.length > 0 ? (
               <div className="relative w-full max-w-4xl flex items-center justify-center">
-                {/* Left Button */}
                 <button
                   onClick={goToPrevious}
                   className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full glow-button left-0 ${
@@ -234,7 +228,6 @@ const Events = () => {
                   </svg>
                 </button>
 
-                {/* Card */}
                 <div className="relative h-[520px] w-full max-w-2xl mx-auto">
                   {filteredEvents.map((event, eventIndex) => {
                     let position = 'opacity-0 scale-90 pointer-events-none';
@@ -318,7 +311,6 @@ const Events = () => {
                               </div>
                             </div>
 
-                            {/* Register Button */}
                             {event.registerLink && (
                               <a
                                 href={event.registerLink}
@@ -336,7 +328,6 @@ const Events = () => {
                   })}
                 </div>
 
-                {/* Right Button */}
                 <button
                   onClick={goToNext}
                   className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full glow-button right-0 ${
@@ -366,7 +357,6 @@ const Events = () => {
             )}
           </div>
 
-          {/* 💾 DOWNLOAD RULEBOOK CARD */}
           <div className="w-full max-w-lg mx-auto mt-20 mb-24 text-center backdrop-blur-xl bg-white/5 border border-cyan-400/20 rounded-3xl p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 hover:scale-[1.02] transition-all duration-500 font-mon">
             <h2 className="text-2xl font-semibold text-cyan-300 mb-3 tracking-widest">
               Want to Know the Rules?

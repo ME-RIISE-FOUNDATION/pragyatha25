@@ -11,8 +11,7 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Countdown Timer
-  const targetDate = new Date("2025-12-15T00:00:00"); // Set your event date here
+  const targetDate = new Date("2025-12-15T00:00:00");
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -51,14 +50,12 @@ const Home = () => {
 
   return (
     <div className="relative overflow-hidden">
-      {/* ❄ Snowfall Layer */}
       <Suspense fallback={null}>
         <div className="fixed inset-0 pointer-events-none z-20 will-change-transform">
           <Snowfall color="#dee4f0" snowflakeCount={snowflakeCount} speed={[0.5, 2]} />
         </div>
       </Suspense>
 
-      {/* HERO SECTION */}
       <section
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center text-white"
@@ -85,7 +82,7 @@ const Home = () => {
             Proclaim Your Potential
           </p>
 
-          + <div className="mt-8 flex flex-wrap justify-center gap-6">
+           <div className="mt-8 flex flex-wrap justify-center gap-6">
   {["days","hours","minutes","seconds"].map(unit => (
     <div key={unit} className="flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-white/10 border border-cyan-300/30 backdrop-blur-md shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
       <span className="text-3xl font-bold text-cyan-300">{timeLeft[unit]}</span>
@@ -112,15 +109,12 @@ const Home = () => {
         </main>
       </section>
 
-      {/* LAZY-LOADED GALLERY */}
       <Suspense fallback={<div className="text-center text-gray-400 py-10 animate-pulse">Loading Gallery...</div>}>
         <ImageGallery />
       </Suspense>
 
-      {/* ABOUT SECTION */}
       <section id="about" className="min-h-screen bg-black text-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-10">
-          {/* Header */}
           <header className="text-center mb-14 sm:mb-16">
             <h1
               className="font-got text-4xl md:text-6xl lg:text-7xl tracking-widest mb-4"
@@ -137,9 +131,7 @@ const Home = () => {
           </header>
 
           <div className="max-w-6xl mx-auto">
-            {/* Main Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 font-mon">
-              {/* About Text */}
               <div className="space-y-5 text-center sm:text-left">
                 <h2 className="text-2xl sm:text-3xl font-semibold tracking-wider uppercase mb-4">
                   Welcome to Pragyatha '25
@@ -153,7 +145,6 @@ const Home = () => {
                 </p>
               </div>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {[{ value: "500+", label: "Participants" },
                   { value: "5+", label: "Events" },
@@ -167,7 +158,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Vision & Mission */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
               {[{
                 title: "Our Vision",
@@ -187,7 +177,6 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Call to Action */}
             <div className="text-center bg-white/5 border border-white/10 rounded-xl p-6 sm:p-10 font-mon">
               <h2 className="text-xl sm:text-2xl font-semibold tracking-wider uppercase mb-3">Ready to Join Us?</h2>
               <p className="text-gray-300 mb-5 text-sm sm:text-base max-w-2xl mx-auto">

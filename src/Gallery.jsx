@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Gallery = () => {
-  // Data for Pragyatha '24 gallery
   const galleryItems = [
     { id: 1, title: "Inauguration Spark", image: "https://placehold.co/600x800/0f172a/00ffff?text=Pragyatha+'24" },
     { id: 2, title: "Coding Arena", image: "https://placehold.co/600x600/0f172a/00ffff?text=Pragyatha+'24" },
@@ -16,12 +15,12 @@ const Gallery = () => {
   const customStyles = `
     .masonry-gallery {
       column-count: 3;
-      column-gap: 1.5rem; /* 24px */
+      column-gap: 1.5rem;
     }
     .masonry-item {
       display: inline-block;
       width: 100%;
-      margin-bottom: 1.5rem; /* 24px */
+      margin-bottom: 1.5rem;
       break-inside: avoid;
     }
     @media (max-width: 1024px) {
@@ -41,7 +40,6 @@ const Gallery = () => {
       <style dangerouslySetInnerHTML={{ __html: customStyles }} />
       <div className="container mx-auto px-6">
         
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="font-bold text-4xl md:text-6xl tracking-widest mb-4 text-white"
             style={{ textShadow: '0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 191, 255, 0.5)' }}>
@@ -52,7 +50,6 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
         <div className="masonry-gallery">
           {galleryItems.map((item) => (
             <div key={item.id} className="masonry-item">
@@ -73,4 +70,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-

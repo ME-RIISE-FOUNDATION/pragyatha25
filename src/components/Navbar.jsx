@@ -8,11 +8,9 @@ const Navbar = () => {
   const links = [
     { name: "Home", href: "/" },
     { name: "Events", href: "/events" },
-    // { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
 
-  // Close navbar when clicking outside OR scrolling
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -21,7 +19,7 @@ const Navbar = () => {
     };
 
     const handleScroll = () => {
-      setOpen(false); // 👈 closes menu when scrolling
+      setOpen(false);
     };
 
     if (open) {
@@ -44,7 +42,6 @@ const Navbar = () => {
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[85%] z-50 font-mon"
     >
       <div className="relative backdrop-blur-xl shadow-lg rounded-full px-5 md:px-8 py-3 flex items-center justify-between text-white transition-all duration-300">
-        {/* LEFT — MERIISE LOGO */}
         <Link to="/" className="flex items-center space-x-3">
           <div className="flex items-center justify-center w-auto h-12">
             <img
@@ -55,7 +52,6 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* CENTER — LINKS */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-10">
           {links.map((link) => (
             <Link
@@ -69,7 +65,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* RIGHT — RULEBOOK */}
         <a
           href="/rulebook.pdf"
           download="PRAGYATHA_Rulebook.pdf"
@@ -78,7 +73,6 @@ const Navbar = () => {
           RULEBOOK
         </a>
 
-        {/* HAMBURGER (Mobile) */}
         <button onClick={() => setOpen(!open)} className="md:hidden focus:outline-none">
           <svg
             className="w-7 h-7"
@@ -105,7 +99,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       <div
         className={`md:hidden mt-3 backdrop-blur-2xl bg-black/70 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 ${
           open

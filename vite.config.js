@@ -8,6 +8,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    historyApiFallback: true, // 👈 ensures React Router handles routing
+    historyApiFallback: true, 
   },
 })

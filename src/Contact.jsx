@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { FaInstagram, FaYoutube, FaLinkedin, FaGlobe } from "react-icons/fa";
 
@@ -22,7 +20,6 @@ const Contact = () => {
       id="contact"
       className="relative min-h-screen bg-gradient-to-br from-gray-950 via-black to-slate-900 text-gray-100 flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans"
     >
-      {/* Wind Animation */}
       <div className="absolute inset-0 pointer-events-none z-0">{windStreaks}</div>
 
       <style>{`
@@ -45,10 +42,8 @@ const Contact = () => {
         }
       `}</style>
 
-      {/* Main Content */}
       <div className="relative z-10 w-full max-w-6xl font-mon">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left Column */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
               Get In Touch <br /> with our Organizers!
@@ -57,7 +52,6 @@ const Contact = () => {
               Have questions or ideas? We'd love to hear from you. Follow our social channels to stay updated or contact our organizers directly.
             </p>
 
-            {/* Social Media */}
             <div className="mt-8">
               <h2 className="text-lg font-semibold tracking-wider mb-4 uppercase text-slate-400">
                 Follow Us
@@ -102,12 +96,10 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Column: Contact Details */}
           <div className="bg-gray-900/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 shadow-2xl shadow-black/40">
             <h2 className="text-2xl font-semibold text-white mb-8">Organizer Contacts</h2>
 
             <div className="space-y-8">
-              {/* Organizer 1 */}
               <div className="flex items-start space-x-4">
                 <div className="w-14 h-14 rounded-full bg-slate-800/30 border border-slate-700/50 flex items-center justify-center">
                   <span className="text-slate-400 text-2xl">📱</span>
@@ -132,7 +124,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Organizer 2 */}
               <div className="flex items-start space-x-4 ">
                 <div className="w-14 h-14 rounded-full bg-slate-800/30 border border-slate-700/50 flex items-center justify-center">
                   <span className="text-slate-400 text-2xl">📱</span>
@@ -145,7 +136,6 @@ const Contact = () => {
                 </div>
               </div>
 
-{/* Address Section with Embedded Map */}
 <div className="flex flex-col space-y-4 font-mon">
   <div className="flex items-start space-x-4">
     <div className="w-14 h-14 rounded-full bg-slate-800/30 border border-slate-700/50 flex items-center justify-center flex-shrink-0">
@@ -166,7 +156,6 @@ const Contact = () => {
     </div>
   </div>
 
-  {/* Embedded Google Map */}
   <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-700 shadow-md mt-4">
   <iframe
     title="ME-RIISE Foundation Map"

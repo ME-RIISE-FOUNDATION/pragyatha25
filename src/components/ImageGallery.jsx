@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const ImageGallery = () => {
-  // Array of images for the gallery
   const galleryImages = [
     { id: 1, src: '/advogue.jpeg', alt: 'Advouge' },
     { id: 2, src: '/entrophosis.jpeg', alt: 'Entrorphosis' },
@@ -13,12 +12,11 @@ const ImageGallery = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically advance the slider
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % galleryImages.length);
-    }, 3000); // Change image every 4 seconds
-    return () => clearInterval(timer); // Cleanup interval on component unmount
+    }, 3000);
+    return () => clearInterval(timer);
   }, [galleryImages.length]);
 
   const customStyles = `
@@ -26,7 +24,7 @@ const ImageGallery = () => {
       perspective: 1200px;
       position: relative;
       width: 100%;
-      height: 450px; /* Set a fixed height for the container */
+      height: 450px;
     }
 
     .coverflow-image {
@@ -35,7 +33,7 @@ const ImageGallery = () => {
       left: 0;
       right: 0;
       margin: auto;
-      height: 400px; /* Base height for images */
+      height: 400px;
       width: auto;
       border-radius: 0.75rem;
       border: 2px solid rgba(0, 255, 255, 0.3);
@@ -44,7 +42,6 @@ const ImageGallery = () => {
       -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0004);
     }
     
-    /* Responsive adjustments */
     @media (max-width: 768px) {
         .coverflow-container {
             height: 350px;
@@ -70,7 +67,7 @@ const ImageGallery = () => {
       <div className="coverflow-container">
         {galleryImages.map((image, index) => {
           const offset = index - currentIndex;
-          const isVisible = Math.abs(offset) <= 2; // Only show center, and 2 images on each side
+          const isVisible = Math.abs(offset) <= 2;
 
           const style = {
             transform: `
@@ -98,4 +95,3 @@ const ImageGallery = () => {
 };
 
 export default ImageGallery;
-

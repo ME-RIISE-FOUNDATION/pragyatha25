@@ -5,7 +5,6 @@ const Snowfall = () => {
     const canvas = document.getElementById("snowfall");
     const ctx = canvas.getContext("2d");
 
-    // Set canvas size
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -13,7 +12,6 @@ const Snowfall = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    // Create snowflakes
     const numFlakes = 120;
     const flakes = [];
 
@@ -26,7 +24,7 @@ const Snowfall = () => {
         drift: Math.random() * 1 - 0.5,
         swayAngle: Math.random() * Math.PI * 2,
         opacity: Math.random() * 0.6 + 0.4,
-        blur: Math.random() * 2, // blur for depth
+        blur: Math.random() * 2,
       });
     }
 
@@ -34,7 +32,6 @@ const Snowfall = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       flakes.forEach((flake) => {
-        // Add glow/blur for realistic flake look
         ctx.beginPath();
         ctx.shadowBlur = flake.blur * 3;
         ctx.shadowColor = "rgba(255,255,255,0.9)";
@@ -42,12 +39,10 @@ const Snowfall = () => {
         ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Update position with gentle sway
-        flake.swayAngle += 0.01; // smooth side movement
+        flake.swayAngle += 0.01;
         flake.x += Math.sin(flake.swayAngle) * 0.3 + flake.drift;
         flake.y += flake.speedY;
 
-        // Reset flakes when they fall off-screen
         if (flake.y > canvas.height) {
           flake.y = -flake.radius;
           flake.x = Math.random() * canvas.width;

@@ -1,22 +1,20 @@
 import React from "react";
 
 const FlameText = () => {
-  const embers = Array.from({ length: 25 }); // 🔥 number of ember particles
+  const embers = Array.from({ length: 25 });
 
   return (
     <div className="relative inline-block">
-      {/* Main flaming text */}
       <h1 className="font-semibold text-4xl md:text-5xl tracking-widest text-transparent bg-clip-text bg-gradient-to-t from-orange-700 via-yellow-400 to-white animate-fire relative z-10">
         PRAGYATHA '25
       </h1>
 
-      {/* Floating embers */}
       <div className="absolute inset-0 overflow-visible pointer-events-none">
         {embers.map((_, i) => {
-          const size = Math.random() * 4 + 2; // ember size (2px–6px)
-          const left = Math.random() * 100; // random x position
-          const delay = Math.random() * 4; // random animation delay
-          const duration = 2 + Math.random() * 3; // animation speed (2s–5s)
+          const size = Math.random() * 4 + 2;
+          const left = Math.random() * 100;
+          const delay = Math.random() * 4;
+          const duration = 2 + Math.random() * 3;
           return (
             <span
               key={i}
