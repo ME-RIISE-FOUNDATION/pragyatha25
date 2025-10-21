@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import Snowfall from "react-snowfall";
+import { Link } from 'react-router-dom';
 // import BlueEmbers from "./components/BlueEmbers"; // ❌ Removed: This component was imported but not used.
 
 // ✅ LAZY-LOADING: This ensures the ImageGallery component code
@@ -226,19 +227,20 @@ const Home = () => {
                 and connect with like-minded individuals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="src/Events.jsx"
-                  className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
-                >
-                  View Events
-                </a>
-                <a
-                  href="src/Contact.jsx"
-                  className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
-                >
-                  Contact Us
-                </a>
-              </div>
+  <Link
+    to="/events"
+    className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
+  >
+    View Events
+  </Link>
+
+  <Link
+    to="/contact"
+    className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
+  >
+    Contact Us
+  </Link>
+</div>
             </div>
           </div>
         </div>
