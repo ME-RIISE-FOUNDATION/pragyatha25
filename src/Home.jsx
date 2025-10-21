@@ -1,11 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import Snowfall from "react-snowfall";
 import { Link } from 'react-router-dom';
-// import BlueEmbers from "./components/BlueEmbers"; // ❌ Removed: This component was imported but not used.
-
-// ✅ LAZY-LOADING: This ensures the ImageGallery component code
-// is only downloaded by the browser when it's needed,
-// speeding up your initial page load.
 const ImageGallery = React.lazy(() => import("./components/ImageGallery"));
 
 const Home = () => {
@@ -16,9 +11,31 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // ✅ This logic is already optimal.
-  // It correctly sets an event listener on mount
-  // and cleans it up on unmount.
+  // Countdown Timer
+  const targetDate = new Date("2025-12-15T00:00:00"); // Set your event date here
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+        setTimeLeft({ days, hours, minutes, seconds });
+      }
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const updateSnowflakeCount = () => {
       const width = window.innerWidth;
@@ -30,18 +47,14 @@ const Home = () => {
     updateSnowflakeCount();
     window.addEventListener("resize", updateSnowflakeCount);
     return () => window.removeEventListener("resize", updateSnowflakeCount);
-  }, []); // Empty dependency array is correct here.
+  }, []);
 
   return (
     <div className="relative overflow-hidden">
-      {/* ❄ Optimized Snowfall Layer */}
+      {/* ❄ Snowfall Layer */}
       <Suspense fallback={null}>
         <div className="fixed inset-0 pointer-events-none z-20 will-change-transform">
-          <Snowfall
-            color="#dee4f0"
-            snowflakeCount={snowflakeCount}
-            speed={[0.5, 2]}
-          />
+          <Snowfall color="#dee4f0" snowflakeCount={snowflakeCount} speed={[0.5, 2]} />
         </div>
       </Suspense>
 
@@ -56,16 +69,14 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80 z-0"></div>
 
-        {/* Content */}
         <main className="relative z-10 px-2 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center">
           <h1
-            className="font-got font-semibold  text-gray-200 drop-shadow-lg text-center whitespace-nowrap
-    tracking-[0.25em] sm:tracking-[0.35em]
-    text-[clamp(1.8rem,7vw,6rem)] leading-tight
-    scale-x-[0.85] sm:scale-x-100 ocean-flicker"
+            className="font-got font-semibold text-gray-200 drop-shadow-lg text-center whitespace-nowrap
+              tracking-[0.25em] sm:tracking-[0.35em]
+              text-[clamp(1.8rem,7vw,6rem)] leading-tight
+              scale-x-[0.85] sm:scale-x-100 ocean-flicker"
           >
             PRAGYATHA'25
           </h1>
@@ -74,66 +85,47 @@ const Home = () => {
             Proclaim Your Potential
           </p>
 
-          <style>{`
-    /* Ocean flickering glow animation */
-    @keyframes ocean-flicker {
-      0%, 100% {
-        text-shadow:
-          0 0 5px rgba(0, 150, 255, 0.25),
-          0 0 10px rgba(0, 200, 255, 0.15),
-          0 0 20px rgba(0, 255, 255, 0.1);
-        color: rgba(210, 240, 255, 0.9);
-      }
-      20% {
-        text-shadow:
-          0 0 8px rgba(0, 150, 255, 0.5),
-          0 0 15px rgba(0, 220, 255, 0.3),
-          0 0 25px rgba(0, 255, 255, 0.2);
-      }
-      40% {
-        text-shadow:
-          0 0 6px rgba(0, 180, 255, 0.4),
-          0 0 18px rgba(0, 240, 255, 0.3),
-          0 0 30px rgba(0, 255, 255, 0.25);
-      }
-      60% {
-        text-shadow:
-          0 0 4px rgba(0, 130, 255, 0.2),
-          0 0 10px rgba(0, 190, 255, 0.15),
-          0 0 15px rgba(0, 240, 255, 0.1);
-      }
-      80% {
-        text-shadow:
-          0 0 7px rgba(0, 170, 255, 0.35),
-          0 0 20px rgba(0, 230, 255, 0.25),
-          0 0 28px rgba(0, 255, 255, 0.15);
-      }
-    }
+           <div className="mt-8 flex flex-wrap justify-center gap-6">
+  {["days","hours","minutes","seconds"].map(unit => (
+    <div key={unit} className="flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-white/10 border border-cyan-300/30 backdrop-blur-md shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
+      <span className="text-3xl font-bold text-cyan-300">{timeLeft[unit]}</span>
+      <span className="text-xs text-gray-300 uppercase mt-1">{unit}</span>
+    </div>
+  ))}
+</div> 
 
-    .ocean-flicker {
-      animation: ocean-flicker 4s ease-in-out infinite;
-      color: #e6faff;
-    }
-  `}</style>
+{/* <div className="mt-8 flex justify-center gap-6">
+  {["days","hours","minutes","seconds"].map(unit => (
+    <div key={unit} className="flex flex-col items-center justify-center w-20 h-20 rounded-lg border-2 border-cyan-400 shadow-[0_0_10px_cyan] animate-pulse">
+      <span className="text-2xl font-extrabold text-white drop-shadow-lg">{timeLeft[unit]}</span>
+      <span className="text-xs text-gray-300 uppercase mt-1">{unit}</span>
+    </div>
+  ))}
+</div> */}
+
+
+
+
+          <style>{`
+            @keyframes ocean-flicker {
+              0%,100% { text-shadow:0 0 5px rgba(0,150,255,0.25),0 0 10px rgba(0,200,255,0.15),0 0 20px rgba(0,255,255,0.1); color: rgba(210,240,255,0.9); }
+              20% { text-shadow:0 0 8px rgba(0,150,255,0.5),0 0 15px rgba(0,220,255,0.3),0 0 25px rgba(0,255,255,0.2); }
+              40% { text-shadow:0 0 6px rgba(0,180,255,0.4),0 0 18px rgba(0,240,255,0.3),0 0 30px rgba(0,255,255,0.25); }
+              60% { text-shadow:0 0 4px rgba(0,130,255,0.2),0 0 10px rgba(0,190,255,0.15),0 0 15px rgba(0,240,255,0.1); }
+              80% { text-shadow:0 0 7px rgba(0,170,255,0.35),0 0 20px rgba(0,230,255,0.25),0 0 28px rgba(0,255,255,0.15); }
+            }
+            .ocean-flicker { animation: ocean-flicker 4s ease-in-out infinite; color: #e6faff; }
+          `}</style>
         </main>
       </section>
 
-      {/* GALLERY (Lazy Loaded) */}
-      <Suspense
-        fallback={
-          <div className="text-center text-gray-400 py-10 animate-pulse">
-            Loading Gallery...
-          </div>
-        }
-      >
+      {/* LAZY-LOADED GALLERY */}
+      <Suspense fallback={<div className="text-center text-gray-400 py-10 animate-pulse">Loading Gallery...</div>}>
         <ImageGallery />
       </Suspense>
 
       {/* ABOUT SECTION */}
-      <section
-        id="about"
-        className="min-h-screen bg-black text-white py-16 sm:py-20"
-      >
+      <section id="about" className="min-h-screen bg-black text-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-10">
           {/* Header */}
           <header className="text-center mb-14 sm:mb-16">
@@ -170,22 +162,13 @@ const Home = () => {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                {[
-                  { value: "500+", label: "Participants" },
+                {[{ value: "500+", label: "Participants" },
                   { value: "5+", label: "Events" },
                   { value: "3", label: "Days" },
-                  { value: "10+", label: "Colleges" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 text-center transition-all duration-300 hover:bg-white/10"
-                  >
-                    <div className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-2">
-                      {item.value}
-                    </div>
-                    <div className="text-gray-300 uppercase tracking-wider text-xs sm:text-sm">
-                      {item.label}
-                    </div>
+                  { value: "10+", label: "Colleges" }].map((item) => (
+                  <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-6 text-center transition-all duration-300 hover:bg-white/10">
+                    <div className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-2">{item.value}</div>
+                    <div className="text-gray-300 uppercase tracking-wider text-xs sm:text-sm">{item.label}</div>
                   </div>
                 ))}
               </div>
@@ -193,60 +176,48 @@ const Home = () => {
 
             {/* Vision & Mission */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-              {[
-                {
-                  title: "Our Vision",
-                  text: `To engender industry ready graduates possessing magnificent skills
+              {[{
+                title: "Our Vision",
+                text: `To engender industry ready graduates possessing magnificent skills
                   in the arena of innovation and technological development of products/
-                  services.`,
-                },
-                {
-                  title: "Our Mission",
-                  text: `To provide students with opportunities to showcase their skills,
+                  services.`
+              }, {
+                title: "Our Mission",
+                text: `To provide students with opportunities to showcase their skills,
                   learn from industry experts, and collaborate on projects that make a
-                  real difference in the world.`,
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 font-mon transition-all duration-300 hover:bg-white/10"
-                >
-                  <h3 className="text-xl sm:text-2xl font-semibold tracking-wider uppercase mb-3 text-cyan-400">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    {item.text}
-                  </p>
+                  real difference in the world.`
+              }].map((item) => (
+                <div key={item.title} className="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 font-mon transition-all duration-300 hover:bg-white/10">
+                  <h3 className="text-xl sm:text-2xl font-semibold tracking-wider uppercase mb-3 text-cyan-400">{item.title}</h3>
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
 
             {/* Call to Action */}
             <div className="text-center bg-white/5 border border-white/10 rounded-xl p-6 sm:p-10 font-mon">
-              <h2 className="text-xl sm:text-2xl font-semibold tracking-wider uppercase mb-3">
-                Ready to Join Us?
-              </h2>
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-wider uppercase mb-3">Ready to Join Us?</h2>
               <p className="text-gray-300 mb-5 text-sm sm:text-base max-w-2xl mx-auto">
                 Don't miss out on this incredible opportunity to showcase your talents
                 and connect with like-minded individuals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-  <Link
-    to="/events"
-    onClick={handleScrollToTop}
-    className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
-  >
-    View Events
-  </Link>
+                <Link
+                  to="/events"
+                  onClick={handleScrollToTop}
+                  className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
+                >
+                  View Events
+                </Link>
 
-  <Link
-    to="/contact"
-    onClick={handleScrollToTop}
-    className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
-  >
-    Contact Us
-  </Link>
-</div>
+                <Link
+                  to="/contact"
+                  onClick={handleScrollToTop}
+                  className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -255,8 +226,4 @@ const Home = () => {
   );
 };
 
-// ❌ Removed React.memo().
-// React.memo() is for optimizing components when their *props* change.
-// This component's only re-render is caused by its *internal state* (snowflakeCount),
-// so memo() provides no performance benefit and just adds a small, unnecessary check.
-export default Home;       
+export default Home;
