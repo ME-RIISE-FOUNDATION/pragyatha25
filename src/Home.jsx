@@ -62,7 +62,7 @@ const Home = () => {
         {/* Content */}
         <main className="relative z-10 px-2 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center">
           <h1
-            className="font-got text-gray-200 drop-shadow-lg text-center whitespace-nowrap
+            className="font-got font-semibold  text-gray-200 drop-shadow-lg text-center whitespace-nowrap
     tracking-[0.25em] sm:tracking-[0.35em]
     text-[clamp(1.8rem,7vw,6rem)] leading-tight
     scale-x-[0.85] sm:scale-x-100 ocean-flicker"

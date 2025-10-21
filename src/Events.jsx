@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Events = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [clickedButton, setClickedButton] = useState(null);
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -87,7 +88,7 @@ const Events = () => {
       participants: '60+',
       difficulty: 'Beginner – Intermediate',
       sigil: '/cloud.png',
-      registerLink: 'https://forms.gle/JLq8cC5y7o87sxGaA', // Example: no link yet
+      registerLink: 'https://forms.gle/JLq8cC5y7o87sxGaA',
     },
   ];
 
@@ -99,16 +100,20 @@ const Events = () => {
 
   // Carousel navigation
   const goToNext = () => {
+    setClickedButton('next');
+    setTimeout(() => setClickedButton(null), 400);
     setCurrentIndex((prev) => (prev + 1) % filteredEvents.length);
   };
 
   const goToPrevious = () => {
+    setClickedButton('prev');
+    setTimeout(() => setClickedButton(null), 400);
     setCurrentIndex(
       (prev) => (prev - 1 + filteredEvents.length) % filteredEvents.length
     );
   };
 
-  // Particle effect (subtle floating glow)
+  // Particle effect
   const particleCount = 120;
   const particles = Array.from({ length: particleCount }).map((_, i) => {
     const horizontalDrift = Math.random() * 60 - 30;
@@ -146,6 +151,20 @@ const Events = () => {
     @keyframes glowPulse {
       0%, 100% { text-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff; }
       50% { text-shadow: 0 0 30px #00ffff, 0 0 60px #1e90ff; }
+    }
+    .glow-button {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+    .glow-button:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
+    .glow-click {
+      animation: buttonFlash 0.4s ease-out;
+    }
+    @keyframes buttonFlash {
+      0% { box-shadow: 0 0 10px #00ffff, 0 0 20px #0077ff; transform: scale(1.1); }
+      100% { box-shadow: 0 0 15px rgba(0,255,255,0.3); transform: scale(1); }
     }
   `;
 
@@ -195,7 +214,9 @@ const Events = () => {
                 {/* Left Button */}
                 <button
                   onClick={goToPrevious}
-                  className="absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full hover:bg-blue-800/70 transition-colors duration-300 left-0"
+                  className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full glow-button left-0 ${
+                    clickedButton === 'prev' ? 'glow-click' : ''
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -298,20 +319,18 @@ const Events = () => {
                             </div>
 
                             {/* Register Button */}
- {/* REGISTER BUTTON — show only if registerLink exists */}
-{event.registerLink && (
-  <a
-    href={event.registerLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full mt-6 py-3 px-8 text-center bg-blue-800/40 border border-blue-700 text-blue-200 font-semibold tracking-wide rounded-lg hover:bg-blue-700 hover:text-white transition-all duration-300 uppercase text-sm"
-  >
-    Register Now
-  </a>
-)}
+                            {event.registerLink && (
+                              <a
+                                href={event.registerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full mt-6 py-3 px-8 text-center bg-blue-800/40 border border-blue-700 text-blue-200 font-semibold tracking-wide rounded-lg hover:bg-blue-700 hover:text-white transition-all duration-300 uppercase text-sm"
+                              >
+                                Register Now
+                              </a>
+                            )}
                           </div>
                         </div>
-                        
                       </div>
                     );
                   })}
@@ -320,7 +339,9 @@ const Events = () => {
                 {/* Right Button */}
                 <button
                   onClick={goToNext}
-                  className="absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full hover:bg-blue-800/70 transition-colors duration-300 right-0"
+                  className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full glow-button right-0 ${
+                    clickedButton === 'next' ? 'glow-click' : ''
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -344,30 +365,29 @@ const Events = () => {
               </div>
             )}
           </div>
+
           {/* 💾 DOWNLOAD RULEBOOK CARD */}
-{/* 💾 DOWNLOAD RULEBOOK CARD */}
-<div className="w-full max-w-lg mx-auto mt-20 mb-24 text-center backdrop-blur-xl bg-white/5 border border-cyan-400/20 rounded-3xl p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 hover:scale-[1.02] transition-all duration-500 font-mon">
-  <h2 className="text-2xl font-semibold text-cyan-300 mb-3 tracking-widest">
-    Want to Know the Rules?
-  </h2>
-  <p className="text-gray-300 text-sm mb-6">
-    Download the official <span className="text-cyan-400 font-medium">PRAGYATHA ‘25</span> Rulebook for complete event details, guidelines, and judging criteria.
-  </p>
+          <div className="w-full max-w-lg mx-auto mt-20 mb-24 text-center backdrop-blur-xl bg-white/5 border border-cyan-400/20 rounded-3xl p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 hover:scale-[1.02] transition-all duration-500 font-mon">
+            <h2 className="text-2xl font-semibold text-cyan-300 mb-3 tracking-widest">
+              Want to Know the Rules?
+            </h2>
+            <p className="text-gray-300 text-sm mb-6">
+              Download the official{' '}
+              <span className="text-cyan-400 font-medium">PRAGYATHA ‘25</span>{' '}
+              Rulebook for complete event details, guidelines, and judging
+              criteria.
+            </p>
 
-  <a
-  href="/rulebook.pdf"
-  download="PRAGYATHA_Rulebook.pdf"
-  className="inline-block px-6 py-3 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"
->
-  Download Rulebook
-</a>
-
-</div>
-
-
+            <a
+              href="/rulebook.pdf"
+              download="PRAGYATHA_Rulebook.pdf"
+              className="inline-block px-6 py-3 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"
+            >
+              Download Rulebook
+            </a>
+          </div>
         </div>
       </div>
-      
     </>
   );
 };

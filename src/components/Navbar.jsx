@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  // Close navbar when clicking outside
+  // Close navbar when clicking outside OR scrolling
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -20,14 +20,21 @@ const Navbar = () => {
       }
     };
 
+    const handleScroll = () => {
+      setOpen(false); // 👈 closes menu when scrolling
+    };
+
     if (open) {
       document.addEventListener("mousedown", handleClickOutside);
+      window.addEventListener("scroll", handleScroll);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [open]);
 
@@ -37,20 +44,15 @@ const Navbar = () => {
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[85%] z-50 font-mon"
     >
       <div className="relative backdrop-blur-xl shadow-lg rounded-full px-5 md:px-8 py-3 flex items-center justify-between text-white transition-all duration-300">
-        {/* LEFT — LOGO */}
+        {/* LEFT — MERIISE LOGO */}
         <Link to="/" className="flex items-center space-x-3">
-          <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+          <div className="flex items-center justify-center w-auto h-12">
             <img
-              src="/pragyatha_logo.png"
-              alt="logo"
-              className="object-contain w-full h-full invert brightness-0"
+              src="/ml.png"
+              alt="Meriise Logo"
+              className="object-contain h-14 lg:h-18 w-auto"
             />
           </div>
-
-          <h1 className="relative font-semibold text-lg tracking-widest text-transparent bg-clip-text bg-gradient-to-t from-orange-600 via-yellow-400 to-white animate-fire">
-            PRAGYATHA '25
-            <span className="absolute inset-0 -z-10 animate-embers"></span>
-          </h1>
         </Link>
 
         {/* CENTER — LINKS */}
@@ -124,19 +126,13 @@ const Navbar = () => {
           ))}
           <div className="w-4/5 border-t border-white/20"></div>
           <a
-  href="/rulebook.pdf"
-  download="PRAGYATHA_Rulebook.pdf"
-  onClick={() => setOpen(false)}
-  className="px-5 py-2 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wide hover:bg-cyan-400 hover:text-black transition-all duration-300"
->
-  RULEBOOK
-</a>
-
-
-
-
-
-
+            href="/rulebook.pdf"
+            download="PRAGYATHA_Rulebook.pdf"
+            onClick={() => setOpen(false)}
+            className="px-5 py-2 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wide hover:bg-cyan-400 hover:text-black transition-all duration-300"
+          >
+            RULEBOOK
+          </a>
         </div>
       </div>
     </nav>
