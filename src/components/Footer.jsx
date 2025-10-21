@@ -51,10 +51,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+          <p className="text-gray-400 text-sm text-center md:text-left">
             © 2025 Pragyatha. All rights reserved.
           </p>
+
+          <p className="text-gray-400 text-sm text-center md:text-right">
+            Developed by <span className="text-cyan-400 font-semibold">Technical Team</span>
+          </p>
+
           <div className="flex space-x-6">
             <button 
               onClick={() => alert('Privacy Policy page coming soon!')}

@@ -12,6 +12,10 @@ const Home = () => {
   const backgroundImageUrl = "/home_bg.jpg";
   const [snowflakeCount, setSnowflakeCount] = useState(70);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // ✅ This logic is already optimal.
   // It correctly sets an event listener on mount
   // and cleans it up on unmount.
@@ -229,6 +233,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
   <Link
     to="/events"
+    onClick={handleScrollToTop}
     className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
   >
     View Events
@@ -236,6 +241,7 @@ const Home = () => {
 
   <Link
     to="/contact"
+    onClick={handleScrollToTop}
     className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
   >
     Contact Us
@@ -253,4 +259,4 @@ const Home = () => {
 // React.memo() is for optimizing components when their *props* change.
 // This component's only re-render is caused by its *internal state* (snowflakeCount),
 // so memo() provides no performance benefit and just adds a small, unnecessary check.
-export default Home;
+export default Home;       
