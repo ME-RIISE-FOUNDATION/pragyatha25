@@ -60,7 +60,7 @@ const ImageGallery = () => {
       <style dangerouslySetInnerHTML={{ __html: customStyles }} />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h1 className="font-bold text-4xl md:text-5xl tracking-wider mb-4 uppercase font-mon">
+          <h1 className=" font-mon font-bold text-4xl md:text-5xl tracking-wider mb-4 uppercase font-mon">
             Glimpse of Pragyatha
           </h1>
 

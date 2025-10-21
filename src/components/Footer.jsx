@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-black/90 backdrop-blur-xl border-t border-white/10 text-white py-8 font-mon">
       <div className="container mx-auto px-6">
@@ -30,16 +34,16 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start space-y-4">
             <h4 className="font-semibold text-lg tracking-wider uppercase">Quick Links</h4>
             <div className="flex flex-col space-y-2">
-              <Link to="/" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <Link to="/" onClick={handleScrollToTop} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Home
               </Link>
-              <Link to="/events" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <Link to="/events" onClick={handleScrollToTop} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Events
               </Link>
               {/* <Link to="/gallery" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Gallery
               </Link> */}
-              <Link to="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+              <Link to="/contact" onClick={handleScrollToTop} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Contact
               </Link>
             </div>

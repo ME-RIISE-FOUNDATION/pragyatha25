@@ -346,22 +346,24 @@ const Events = () => {
           </div>
           {/* 💾 DOWNLOAD RULEBOOK CARD */}
 {/* 💾 DOWNLOAD RULEBOOK CARD */}
-<div className="w-full max-w-lg mx-auto mt-20 mb-24 text-center backdrop-blur-xl bg-white/5 border border-cyan-400/20 rounded-3xl p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 hover:scale-[1.02] transition-all duration-500 font-mon
-">
+<div className="w-full max-w-lg mx-auto mt-20 mb-24 text-center backdrop-blur-xl bg-white/5 border border-cyan-400/20 rounded-3xl p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 hover:scale-[1.02] transition-all duration-500 font-mon">
   <h2 className="text-2xl font-semibold text-cyan-300 mb-3 tracking-widest">
     Want to Know the Rules?
   </h2>
   <p className="text-gray-300 text-sm mb-6">
     Download the official <span className="text-cyan-400 font-medium">PRAGYATHA ‘25</span> Rulebook for complete event details, guidelines, and judging criteria.
   </p>
+
   <a
-    href="/Rulebook.pdf"
-    download
-    className="inline-block px-6 py-3 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"
-  >
-    Download Rulebook
-  </a>
+  href={`${window.location.origin}/Rulebook.pdf`}
+  download="PRAGYATHA_Rulebook.pdf"
+  className="inline-block px-6 py-3 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"
+>
+  Download Rulebook
+</a>
+
 </div>
+
 
         </div>
       </div>
