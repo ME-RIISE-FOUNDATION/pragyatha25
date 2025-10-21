@@ -85,7 +85,7 @@ const Home = () => {
             Proclaim Your Potential
           </p>
 
-           <div className="mt-8 flex flex-wrap justify-center gap-6">
+          + <div className="mt-8 flex flex-wrap justify-center gap-6">
   {["days","hours","minutes","seconds"].map(unit => (
     <div key={unit} className="flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-white/10 border border-cyan-300/30 backdrop-blur-md shadow-lg hover:shadow-cyan-400/50 transition-all duration-300">
       <span className="text-3xl font-bold text-cyan-300">{timeLeft[unit]}</span>
@@ -94,14 +94,7 @@ const Home = () => {
   ))}
 </div> 
 
-{/* <div className="mt-8 flex justify-center gap-6">
-  {["days","hours","minutes","seconds"].map(unit => (
-    <div key={unit} className="flex flex-col items-center justify-center w-20 h-20 rounded-lg border-2 border-cyan-400 shadow-[0_0_10px_cyan] animate-pulse">
-      <span className="text-2xl font-extrabold text-white drop-shadow-lg">{timeLeft[unit]}</span>
-      <span className="text-xs text-gray-300 uppercase mt-1">{unit}</span>
-    </div>
-  ))}
-</div> */}
+
 
 
 
