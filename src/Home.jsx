@@ -227,13 +227,13 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/events"
+                  href="src/Events.jsx"
                   className="px-6 sm:px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-300 font-semibold tracking-wide rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 uppercase text-sm sm:text-base"
                 >
                   View Events
                 </a>
                 <a
-                  href="/contact"
+                  href="src/Contact.jsx"
                   className="px-6 sm:px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold tracking-wide rounded-lg hover:bg-white/20 transition-all duration-300 uppercase text-sm sm:text-base"
                 >
                   Contact Us
