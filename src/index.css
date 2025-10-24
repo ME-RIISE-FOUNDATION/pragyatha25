@@ -84,3 +84,23 @@
   animation-delay: 0.75s;
   left: 55%;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+}

@@ -6,8 +6,8 @@ const ImageGallery = () => {
     { id: 2, src: '/entrophosis.jpeg', alt: 'Entrorphosis' },
     { id: 3, src: '/uiux.jpeg', alt: 'UI/UX Hackaton' },
     { id: 4, src: '/design.jpeg', alt: 'Designing 101' },
-    { id: 5, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+5', alt: 'Event Image 5' },
-    { id: 6, src: 'https://placehold.co/400x600/0d1a2e/7DF9FF?text=Pragyatha+6', alt: 'Event Image 6' },
+    { id: 5, src: '/cloud.jpg', alt: 'Event Image 5' },
+    { id: 6, src: '   /blockchain.jpg', alt: 'Event Image 6' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

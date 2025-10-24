@@ -328,27 +328,31 @@ const Events = () => {
                   })}
                 </div>
 
-                <button
-                  onClick={goToNext}
-                  className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/50 rounded-full glow-button right-0 ${
-                    clickedButton === 'next' ? 'glow-click' : ''
-                  }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
+<button
+  onClick={goToNext}
+  className={`absolute top-1/2 -translate-y-1/2 z-20 p-3 bg-gray-800/60 rounded-full border border-cyan-400/30 
+  shadow-[0_0_8px_rgba(0,255,255,0.3)] transition-all duration-300 
+  hover:shadow-[0_0_15px_rgba(0,255,255,0.6)] hover:bg-gray-800/80 
+  animate-[pulseGlow_2.5s_ease-in-out_infinite] right-0 ${
+    clickedButton === 'next' ? 'scale-110 shadow-[0_0_20px_rgba(0,255,255,0.7)]' : ''
+  }`}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6 text-cyan-400"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+</button>
+
               </div>
             ) : (
               <div className="flex items-center justify-center h-full">
@@ -370,7 +374,7 @@ const Events = () => {
 
             <a
               href="/rulebook.pdf"
-              download="PRAGYATHA_Rulebook.pdf"
+              download="Pragyatha'25_Rulebook.pdf"
               className="inline-block px-6 py-3 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wider hover:bg-cyan-400 hover:text-black transition-all duration-300"
             >
               Download Rulebook

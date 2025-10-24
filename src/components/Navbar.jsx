@@ -120,7 +120,7 @@ const Navbar = () => {
           <div className="w-4/5 border-t border-white/20"></div>
           <a
             href="/rulebook.pdf"
-            download="PRAGYATHA_Rulebook.pdf"
+            download="Pragyatha'25_Rulebook.pdf"
             onClick={() => setOpen(false)}
             className="px-5 py-2 rounded-full bg-cyan-400/20 border border-cyan-400/50 text-cyan-300 font-semibold tracking-wide hover:bg-cyan-400 hover:text-black transition-all duration-300"
           >
