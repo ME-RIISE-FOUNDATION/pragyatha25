@@ -285,26 +285,39 @@ const Home = () => {
           </p>
 
           {/* ⏳ Countdown Timer */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-center font-mon">
-            {[
-              { label: "Days", value: timeLeft.days },
-              { label: "Hours", value: timeLeft.hours },
-              { label: "Minutes", value: timeLeft.minutes },
-              { label: "Seconds", value: timeLeft.seconds },
-            ].map((unit) => (
-              <div
-                key={unit.label}
-                className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 sm:px-6 sm:py-5 w-24 sm:w-28 transition-all duration-300 hover:bg-white/10"
-              >
-                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">
-                  {unit.value.toString().padStart(2, "0")}
-                </div>
-                <div className="text-gray-300 uppercase tracking-widest text-xs sm:text-sm">
-                  {unit.label}
-                </div>
-              </div>
-            ))}
+<div className="mt-10 flex justify-center items-center px-4">
+  {/* Countdown Card */}
+  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500 w-full max-w-lg text-center flex flex-col items-center">
+    
+    {/* Title */}
+    <p className="text-cyan-400 text-base sm:text-lg md:text-xl uppercase tracking-[0.25em] mb-8 font-semibold leading-relaxed">
+      The Throne<br className="sm:hidden" /> Awaits the Chosen
+    </p>
+
+    {/* Timer */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full">
+      {[
+        { label: "Days", value: timeLeft.days },
+        { label: "Hours", value: timeLeft.hours },
+        { label: "Minutes", value: timeLeft.minutes },
+        { label: "Seconds", value: timeLeft.seconds },
+      ].map((unit) => (
+        <div
+          key={unit.label}
+          className="bg-white/5 border border-white/10 rounded-xl px-4 py-4 sm:px-5 sm:py-5 transition-all duration-300 hover:bg-white/10 flex flex-col items-center justify-center"
+        >
+          <div className="text-2xl sm:text-3xl font-bold text-cyan-400">
+            {unit.value.toString().padStart(2, "0")}
           </div>
+          <div className="text-gray-300 uppercase tracking-widest text-xs sm:text-sm mt-1">
+            {unit.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
         </main>
       </section>
 
