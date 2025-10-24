@@ -2,7 +2,6 @@
   "name": "pragytha2k25",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ME-RIISE-FOUNDATION.github.io/pragyatha25",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

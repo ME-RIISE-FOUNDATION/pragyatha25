@@ -2,21 +2,17 @@
   "name": "pragytha2k25",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ME-RIISE-FOUNDATION.github.io/pragyatha25",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "start": "react-scripts start",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
     "@tsparticles/slim": "^3.9.1",
-    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
