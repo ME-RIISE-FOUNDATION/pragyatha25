@@ -46,7 +46,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
-              Get In Touc <br /> with our Organizers!
+              Get In Touch <br /> with our Organizers!
             </h1>
             <p className="text-gray-400 max-w-md mx-auto md:mx-0 mb-8">
               Have questions or ideas? We'd love to hear from you. Follow our social channels to stay updated or contact our organizers directly.
